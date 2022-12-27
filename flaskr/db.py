@@ -5,14 +5,13 @@ import click
 ## current_app points to Flask application handling the request
 ## g is a special object unique for each request
 from flask import current_app, g
+from flask.cli import with_appcontext
 
 def get_db():
     if 'db' not in g:
         ## establishes connection to file pointed at by DATABASE config key
         
         g.db = sqlite3.connect(
-
-            
             current_app.config['DATABASE'],
             detect_types=sqlite3.PARSE_DECLTYPES
         )
@@ -39,6 +38,7 @@ def init_db():
 
 ## defines command line command called init-db and shows success message
 @click.command('init-db')
+@with_appcontext
 def init_db_command():
     """Clear the existing data and create new tables."""
     init_db()
