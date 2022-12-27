@@ -15,7 +15,7 @@ from flaskr.db import get_db
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 ## associates url /register with the register view function
-@bp.route('/register', methods=(GET, POST))
+@bp.route('/register', methods=('GET', 'POST'))
 def register():
     ## if user submitted the form - start validating the input
     if request.method == 'POST':
