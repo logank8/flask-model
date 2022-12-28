@@ -3,6 +3,12 @@ import os
 
 from flask import Flask
 
+
+### THINGS THAT STILL NEED TO BE DONE:
+## Connect spotify data to app
+## Connect model to app
+## Make adapative list of previous predictions
+
 ## application factory function
 def create_app(test_config=None):
     # create and configure app
@@ -44,8 +50,8 @@ def create_app(test_config=None):
     from . import abt
     app.register_blueprint(abt.bp)
 
-    from . import blog
-    app.register_blueprint(blog.bp)
+    from . import page
+    app.register_blueprint(page.bp)
     app.add_url_rule('/', endpoint='index')
 
     return app

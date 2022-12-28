@@ -5,7 +5,7 @@ from werkzeug.exceptions import abort
 
 from flaskr.db import get_db
 
-bp = Blueprint('blog', __name__)
+bp = Blueprint('page', __name__)
 
 @bp.route('/')
 def home():
