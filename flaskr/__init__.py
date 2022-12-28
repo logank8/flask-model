@@ -1,3 +1,4 @@
+from abc import abstractclassmethod
 import os
 
 from flask import Flask
@@ -39,9 +40,9 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
-    ## registers authentication blueprint with application instance
-    from . import auth
-    app.register_blueprint(auth.bp)
+    ## registers about blueprint with application instance
+    from . import abt
+    app.register_blueprint(abt.bp)
 
     from . import blog
     app.register_blueprint(blog.bp)

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}About this model{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <body>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Back to model</a>
+        </ul>
+        <p>
+            For this machine learning model, I used a Decision Tree Model.
+        </p>
+    </body>
+{% endblock %}
