@@ -1,5 +1,5 @@
 import sqlite3
-
+import tekore as tk
 import click
 
 ## current_app points to Flask application handling the request
@@ -29,6 +29,7 @@ def close_db(e=None):
 
 
 def init_db():
+
     db = get_db()
 
     ## runs sqlite3 script
