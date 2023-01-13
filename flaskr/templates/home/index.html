@@ -3,31 +3,45 @@
 {% block header %}
 
   <body>
-    <p>Predict a song's popularity:   </p>
+    <p>Predict a song's popularity: </p>
 
-    <form method='post' class="form">
-      <label for="title">Song title:  </label> 
-      <input name="title" id="title" required>
+    <br/>
+    <form method='POST'>
+      {{ form.hidden_tag() }}
+
+      {{ form.name.label}}
+      {{ form.name() }}
+
+      <br/>
+      {{ form.submit() }}
     </form>
-    
+
   </body>
-  
-  <h1>Previous predictions</h1>
+  {% endblock %}
 
-  <body>
+  {% block content %}
 
-    <article class="post">
-      <header>
-        <div>
-          <h1>Filler</h1>
-          <div class="about">date posted</div>
-        </div>
-      </header>
-      <p class="body">filler</p>
-    </article>
+  <h1>Predictions</h1>
 
-    
-  </body>
+    {% for p in previous %}
+
+      <body>
+
+        <article class="post">
+          <header>
+            <div>
+              <h1>{{ p['song'] }}</h1>
+              <div class="about">{{ p['created'].strftime('%Y-%m-%d') }}</div>
+            </div>
+          </header>
+          <p class="body">predicted: {{ p['pred'] }}</p>
+          <p class="body">real: {{ p['realnum'] }}</p>
+        </article>
+
+        
+      </body>
+
+    {% endfor %}
 
   
 {% endblock %}

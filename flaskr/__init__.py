@@ -2,7 +2,7 @@ from abc import abstractclassmethod
 import os
 
 from flask import Flask
-
+from flaskr.pred import Predictor
 
 ### THINGS THAT STILL NEED TO BE DONE:
 ## Connect spotify data to app

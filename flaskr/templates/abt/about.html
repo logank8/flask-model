@@ -10,7 +10,13 @@
             <li><a href="{{ url_for('index') }}">Back to model</a>
         </ul>
         <p>
-            For this machine learning model, I used a Decision Tree Model.
+            For this machine learning model, I used a Random Forest Regressor, and trained the data on the kaggle song popularity dataset.
         </p>
+        <p>
+            One issue I've run into in this is the accuracy when applied to actual Spotify data - the kaggle data is only simulated, and so the model that
+            is based off of it does not hold up as well as it does with the real data. When applied to the simulated data, the model has an accuracy rate of 83%. 
+            In the future, I'd like to see if I could use a model with a constant learning feature to eventually adapt it more to the Spotify data and not the simulated.
+        </p>
+        <a href="https://www.kaggle.com/datasets/yasserh/song-popularity-dataset">Dataset used for model</a>
     </body>
 {% endblock %}
